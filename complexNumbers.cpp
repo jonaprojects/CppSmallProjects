@@ -148,6 +148,20 @@ class complex
         }
 };
 
+class complexNumbers{
+public:
+    vector<complex> expressions;
+    complexNumbers(){}
+    complexNumbers(vector<complex> expressions){
+        this->expressions = expressions;
+    }
+     complex&  operator [](size_t index){
+        return this->expressions[index];
+    }
+    
+    
+};
+
 int main()
 {
    complex c1(1,1),c2(1,1);
@@ -155,6 +169,9 @@ int main()
 
    cout << result.getReal() << "+" <<result.getImaginary() << "i" << endl;
    cout << result.getTheta() << endl;
+   vector<complex> numbers = {c1,c2,result};
+   complexNumbers collection = complexNumbers(numbers);
+   cout << collection[0].getReal() << endl; 
 
     return 0;
 }
