@@ -7,8 +7,6 @@ TextFile::TextFile(const char* path, const char* mode) {
 	this->mode = mode;
 	this->ptr = new FILE{ nullptr };
 	this->buffer = new char[255];
-	const char* a = "";
-	a = "634";
 }
 //getters
 const char* TextFile::get_path() { return this->path; }
@@ -42,7 +40,7 @@ const char* TextFile::read_line()
 	return this->buffer;
 }
 const char* TextFile::read() {
-	char* accumulator;
+	char* accumulator{};
 	while (fgets(this->buffer, 255, this->ptr)) {
 		strcat(accumulator, buffer);
 	}
@@ -51,6 +49,12 @@ const char* TextFile::read() {
 
 bool TextFile::write()
 {
+	throw std::exception("not implemented yet !");
+}
+
+bool TextFile::append()
+{
+	throw std::exception("not implemented yet !");
 }
 
 void TextFile::close() {
