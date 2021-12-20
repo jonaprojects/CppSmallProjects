@@ -1,5 +1,3 @@
-
-
 #include <stdio.h> // for input and output operations
 #include <string.h> // for strcmp, strcpy, strstr, strchr, etc ...
 #include <stdlib.h>
